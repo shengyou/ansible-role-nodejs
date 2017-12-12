@@ -1,0 +1,38 @@
+---
+
+
+
+- name: install common software
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - python-urllib3
+    - python-openssl
+    - python-pyasn1
+
+- name: install python-pip
+  apt:
+    name: python-pip
+    state: present
+    update_cache: yes
+
+- name: install python package | ndg-httpsclient
+  pip:
+    name: ndg-httpsclient
+
+
+- name: download https://deb.nodesource.com/setup_{{ nodejs_version }}.x
+  get_url:
+    url: "https://deb.nodesource.com/setup_{{ nodejs_version }}.x"
+    dest: /tmp/setup_nodejs
+
+- name: run https://deb.nodesource.com/setup_{{ nodejs_version }}.x
+  command: bash /tmp/setup_nodejs
+
+- name: install nodejs
+  apt:
+    name: nodejs
+    state: present
+    update_cache: yes

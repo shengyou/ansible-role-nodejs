@@ -1,0 +1,41 @@
+---
+
+
+- name: install common software
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - libselinux-python
+    - gcc-c++
+    - make
+    - epel-release
+    - python-urllib3
+    - pyOpenSSL
+    - python-pyasn1
+
+- name: install python-pip
+  yum:
+    name: python-pip
+    state: present
+    update_cache: yes
+
+- name: install python package | ndg-httpsclient
+  pip:
+    name: ndg-httpsclient
+
+
+- name: download https://rpm.nodesource.com/setup_{{ nodejs_version }}.x
+  get_url:
+    url: "https://rpm.nodesource.com/setup_{{ nodejs_version }}.x"
+    dest: /tmp/setup_nodejs
+
+- name: run https://rpm.nodesource.com/setup_{{ nodejs_version }}.x
+  command: bash /tmp/setup_nodejs
+
+- name: install nodejs
+  yum:
+    name: nodejs
+    state: present
+    update_cache: yes

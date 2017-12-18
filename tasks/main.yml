@@ -3,13 +3,20 @@
 # Install nodejs use yum or apt
 # https://github.com/nodesource/distributions
 
+- name: check variables
+  fail:
+    msg: "{{ item }} is not defined"
+  when: "{{ item }} is not defined"
+  with_items:
+    - "{{ required_vars }}"
+
 - name: check vars
   fail: msg="nodejs_version != 5 or 6 or 7"
   when: nodejs_version != 5 and nodejs_version != 6 and nodejs_version != 7
 
 - include_tasks: "{{ ansible_distribution }}.yml"
   when: ansible_distribution == "Ubuntu" or ansible_distribution == "CentOS"
-#
+
 - name: install node.js package globally.
   npm:
     name: "{{ item }}"

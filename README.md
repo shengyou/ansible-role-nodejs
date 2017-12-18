@@ -17,8 +17,9 @@ Role Variables
 --------------
 
 * nodejs_version (Default: 7)
-* install_packages
+* install_packages (非必填，如希望一併 global install nodejs package 才須設置。)
 
+使用方式請參考範例。
 
 Dependencies
 ------------

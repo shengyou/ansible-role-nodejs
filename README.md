@@ -2,7 +2,7 @@
 Install nodejs
 =========
 
-install nodejs.
+install nodejs. (5, 6, 7)
 
 * Ubuntu 14.04, 16.04
 * CentOS 6, 7

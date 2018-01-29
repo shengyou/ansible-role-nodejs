@@ -1,5 +1,5 @@
 
-Install nodejs
+Install nodejs [![Build Status](https://travis-ci.org/shengyou/ansible-role-nodejs.svg?branch=master)](https://travis-ci.org/shengyou/ansible-role-nodejs)
 =========
 
 install nodejs. (5, 6, 7)

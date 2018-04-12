@@ -33,9 +33,19 @@
 
 - name: run https://rpm.nodesource.com/setup_{{ nodejs_version }}.x
   command: bash /tmp/setup_nodejs
+  args:
+    creates: "/etc/ansible_installed_nodejs"
+  register: install_nodejs_plugins
+
 
 - name: install nodejs
   yum:
     name: nodejs
     state: present
     update_cache: yes
+
+- name: create /etc/ansible_installed_nodejs
+  file:
+    path: "/etc/ansible_installed_nodejs"
+    state: touch
+  when: install_nodejs_plugins.changed

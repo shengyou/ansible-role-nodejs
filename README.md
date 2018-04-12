@@ -30,8 +30,8 @@ Example Playbook
 ----------------
 
 ```
-- name: install_nodejs.yml
-  hosts: myhost
+- name: ansibel-role-nodejs.yml
+  hosts: your_host
   gather_facts: yes
   become: yes
 
@@ -43,7 +43,7 @@ Example Playbook
       - laravel-echo-server
 
   roles:
-    - install_nodejs
+    - ansibel-role-nodejs
 
 ```
 

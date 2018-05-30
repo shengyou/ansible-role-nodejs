@@ -2,7 +2,7 @@
 Install nodejs [![Build Status](https://travis-ci.org/shengyou/ansible-role-nodejs.svg?branch=master)](https://travis-ci.org/shengyou/ansible-role-nodejs)
 =========
 
-install nodejs. (5, 6, 7)
+install nodejs. (5, 6, 7, 8)
 
 * Ubuntu 14.04, 16.04
 * CentOS 6, 7
@@ -16,7 +16,7 @@ Requirements
 Role Variables
 --------------
 
-* nodejs_version (Default: 7)
+* nodejs_version (Default: 8)
 * install_packages (非必填，如希望一併 global install nodejs package 才須設置。)
 
 使用方式請參考範例。

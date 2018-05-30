@@ -3,4 +3,4 @@
 required_vars:
   - nodejs_version
 
-nodejs_version: 7
+nodejs_version: 8

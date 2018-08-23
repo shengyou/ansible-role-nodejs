@@ -4,3 +4,6 @@ required_vars:
   - nodejs_version
 
 nodejs_version: 8
+
+npm_user: "www-data"
+npm_user_home_path: "/var/www/"

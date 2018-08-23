@@ -16,6 +16,8 @@ Requirements
 Role Variables
 --------------
 
+* npm_user: (Default: www-data)
+* npm_user_home_path: (Default: "/var/www/")
 * nodejs_version (Default: 8)
 * install_packages (非必填，如希望一併 global install nodejs package 才須設置。)
 
@@ -50,9 +52,7 @@ Example Playbook
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).

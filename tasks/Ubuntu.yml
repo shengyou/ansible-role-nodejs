@@ -11,6 +11,13 @@
     - python-urllib3
     - python-openssl
     - python-pyasn1
+    # for nodejs install mozjpeg
+    - libpng-dev
+    - libtool
+    - automake
+    - autoconf
+    - nasm
+    - pkg-config
 
 - name: install python-pip
   apt:

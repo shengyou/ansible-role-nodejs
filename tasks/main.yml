@@ -25,3 +25,12 @@
   with_items:
     - "{{ install_packages }}"
   when: install_packages is defined
+
+- name: create .npm
+  file:
+    path: "{{ npm_user_home_path }}/.npm"
+    state: directory
+    owner: "{{ npm_user }}"
+    group: "{{ npm_user }}"
+    mode: 0700
+  become: yes

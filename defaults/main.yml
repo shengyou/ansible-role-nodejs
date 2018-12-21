@@ -7,3 +7,25 @@ nodejs_version: 8
 
 npm_user: "www-data"
 npm_user_home_path: "/var/www/"
+
+
+yum_install_common_packages:
+  - libselinux-python
+  - gcc-c++
+  - make
+  - epel-release
+  - python-urllib3
+  - pyOpenSSL
+  - python-pyasn1
+
+apt_install_common_packages:
+  - python-urllib3
+  - python-openssl
+  - python-pyasn1
+  # for nodejs install mozjpeg
+  - libpng-dev
+  - libtool
+  - automake
+  - autoconf
+  - nasm
+  - pkg-config

@@ -1,19 +1,11 @@
 ---
 
 
-- name: install common software
+- name: install common packages
   yum:
-    name: "{{ item }}"
+    name: "{{ yum_install_common_packages }}"
     state: present
     update_cache: yes
-  with_items:
-    - libselinux-python
-    - gcc-c++
-    - make
-    - epel-release
-    - python-urllib3
-    - pyOpenSSL
-    - python-pyasn1
 
 - name: install python-pip
   yum:
@@ -25,7 +17,6 @@
   pip:
     name: ndg-httpsclient
 
-
 - name: download https://rpm.nodesource.com/setup_{{ nodejs_version }}.x
   get_url:
     url: "https://rpm.nodesource.com/setup_{{ nodejs_version }}.x"
@@ -36,7 +27,6 @@
   args:
     creates: "/etc/ansible_installed_nodejs"
   register: install_nodejs_plugins
-
 
 - name: install nodejs
   yum:

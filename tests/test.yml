@@ -2,5 +2,12 @@
 
 - hosts: all
 
+  pre_tasks:
+    - name: Add the user 'www-data' for CI.
+      user:
+        name: www-data
+        comment: www-data
+        group: www-data
+
   roles:
     - role_under_test

@@ -2,22 +2,11 @@
 
 
 
-- name: install common software
+- name: install common packages
   apt:
-    name: "{{ item }}"
+    name: "{{ apt_install_common_packages }}"
     state: present
     update_cache: yes
-  with_items:
-    - python-urllib3
-    - python-openssl
-    - python-pyasn1
-    # for nodejs install mozjpeg
-    - libpng-dev
-    - libtool
-    - automake
-    - autoconf
-    - nasm
-    - pkg-config
 
 - name: install python-pip
   apt:

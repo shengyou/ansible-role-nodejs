@@ -3,6 +3,11 @@
 - hosts: all
 
   pre_tasks:
+    - name: Ensure group "www-data" exists for CI
+      group:
+        name: www-data
+        state: present
+
     - name: Add the user 'www-data' for CI.
       user:
         name: www-data

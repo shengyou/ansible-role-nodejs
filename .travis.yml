@@ -14,6 +14,8 @@ script:
   - export container_id=$(date +%s)
   - export cleanup=false
 
+  - chmod +x ${PWD}/tests/test.sh
+
   # Run tests.
   - ${PWD}/tests/test.sh
 
